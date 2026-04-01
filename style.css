@@ -38,3 +38,43 @@ tr:nth-child(1) td { color: var(--gold); font-weight: bold; }
 #roll-btn { padding: 15px; width: 85%; border-radius: 8px; border: none; background: var(--primary); color: white; cursor: pointer; font-weight: bold; }
 .hidden { display: none; }
 #admin-panel { margin-top: 20px; border: 1px dashed red; padding: 15px; }
+
+/* Responsive cho Xúc Xắc */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .main-layout {
+        grid-template-columns: 1fr; /* Chuyển về 1 cột trên mobile */
+    }
+    
+    .game-container {
+        padding: 15px;
+    }
+
+    .dice-box {
+        gap: 10px;
+    }
+
+    .scene {
+        width: 50px;
+        height: 50px;
+    }
+
+    .face {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Điều chỉnh vị trí các chấm xúc xắc nhỏ lại cho vừa face 50px */
+    .face::before { width: 8px; height: 8px; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.5rem; }
+    .nav-item { padding: 8px 15px; font-size: 0.9rem; }
+    #username, #roll-btn { width: 100%; }
+}
