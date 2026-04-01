@@ -59,3 +59,55 @@ body {
 }
 .btn-danger { background: #ff4757; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
 #close-modal { background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-left: 10px; cursor: pointer; }
+
+/* Responsive cho Vòng Quay */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Xử lý vòng quay co giãn */
+.wheel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Không vượt quá 500px */
+    height: auto;
+    aspect-ratio: 1 / 1; /* Giữ khung hình vuông */
+    margin: 0 auto;
+}
+
+#wheelCanvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+@media (max-width: 992px) {
+    .main-layout {
+        grid-template-columns: 1fr; /* Tablet và Mobile chồng lên nhau */
+    }
+}
+
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    
+    .input-section {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .wheel-wrapper {
+        max-width: 300px; /* Nhỏ lại trên điện thoại nhỏ */
+    }
+    
+    .pointer {
+        border-top-width: 20px;
+        border-left-width: 10px;
+        border-right-width: 10px;
+    }
+    
+    .ranking-table th, .ranking-table td {
+        padding: 8px 5px;
+        font-size: 0.85rem;
+    }
+}
